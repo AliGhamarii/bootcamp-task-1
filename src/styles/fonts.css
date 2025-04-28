@@ -74,4 +74,5 @@
 body,
 button {
   font-family: Vazirmatn;
+  font-feature-settings: "ss01"; /* فعال سازی فارسی‌سازی اعداد */
 }
