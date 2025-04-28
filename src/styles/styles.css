@@ -12,6 +12,7 @@
   /* color of elements */
   --color-btn: #219f95;
   --color-counter-container: #afcedd;
+  --color-cards: #dfe7fa67;
 
   /* color of typography */
   --color-body: #1e1e1e;
@@ -22,6 +23,7 @@
   /* radius */
   --radius-btn: 8px;
   --radius-counter: 6px;
+  --radius-card: 12px;
 
   /* avatar */
   --avatar-size: 40px;
@@ -33,32 +35,33 @@ html {
   font-size: 62.5%;
 }
 h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 500;
   color: var(--color-body);
 }
 body {
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 200;
+  line-height: 1.5;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   h2 {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: 2.5rem;
+    font-weight: 700;
   }
   body {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 400;
   }
 }
 @media screen and (min-width: 1024px) {
   h2 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 900;
   }
   body {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 2.3rem;
+    font-weight: 600;
   }
 }
 /* container */
@@ -86,21 +89,20 @@ body {
   border-radius: var(--radius-counter);
   padding: 2.5rem 1.5rem;
   margin: 0 auto;
-  box-shadow: 0 0 5px 1px #ccc;
-  background-color: #dfe7fa67;
+  background-color: var(--color-cards);
 }
 .requests__title {
   grid-column: 1/-1;
 }
-.card__documentation {
+.requests__card-documentation {
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
 }
-.documentation {
+.requests__card-documentation-counter {
   display: flex;
 }
-.documentation span {
+.requests__card-documentation-counter span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,39 +112,40 @@ body {
   border-radius: var(--radius-counter);
   margin-left: 1rem;
 }
-.documentation h3 {
+.requests__card-documentation-counter h3 {
   color: var(--color-counter-and-h3);
 }
-.card__documentation div {
+.requests__card-documentation div {
   color: var(--color-calendar-and-id);
 }
-.card__id p {
-  font-weight: 900;
-  font-size: 2.2rem;
+.requests__card-id p {
+  font-weight: 500;
+  font-size: 1.6rem;
   margin-bottom: 0.3rem;
 }
-.card__id div {
+.requests__card-id div {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-calendar-and-id);
 }
-.card__details {
+.requests__card-details {
   display: flex;
   justify-content: space-between;
 }
-.details__person {
+.requests__card-details-person {
   display: flex;
   margin-top: 2rem;
 }
-.details__person p {
+.requests__card-details-person p {
   margin-top: 1rem;
 }
-.details__person img {
+.requests__card-details-person img {
   width: var(--avatar-size);
   margin-left: 1rem;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: var(--radius-btn);
 }
-.card__details button {
+.requests__card-details button {
   outline: 0;
   border: 0;
   background-color: var(--color-btn);
@@ -151,13 +154,22 @@ body {
   border-radius: var(--radius-btn);
   font-size: 1.8rem;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .requests__cards {
     grid-template-columns: 1fr 1fr;
+  }
+  .requests__card-id p {
+    font-size: 1.8rem;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 1024px) {
   .requests__cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .requests__card-id p {
+    font-size: 2.2rem;
+    font-weight: 900;
   }
 }
